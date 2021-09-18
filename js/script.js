@@ -47,6 +47,7 @@ const loadBookData = () => {
 // display data to website 
 const displayBookData = (books) => {
 
+    // search item not found 
     if (books.length === 0) {
         noResultContainer.innerHTML = `
         <p class="text-center text-danger"> No result found </p>
@@ -54,15 +55,13 @@ const displayBookData = (books) => {
         searchResultContainer.innerHTML = '';
     }
 
+    // search result summary 
     else if (books.length > 0) {
 
         searchResultContainer.innerHTML = `
-    <p class="text-center text-success"> showing first ${books.length / 2} items of ${books.length} </p>
+    <p class="text-center text-success "> showing first ${books.length / 2} items of ${books.length} </p>
     `
     }
-    // searchResultContainer.innerHTML = `
-    // <p> showing first ${books.length / 2} items of ${books.length} </p>
-    // `
 
     console.log(books.length, books)
     bookContainer.textContent = '';
@@ -73,9 +72,9 @@ const displayBookData = (books) => {
         div.classList.add('col')
         div.innerHTML =
             `
-        <div class="card h-100" >
-                    <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top card-image " alt="image..">
-                    <div class="card-body">
+        <div class="card h-100 " >
+                    <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top card-image  " alt="image..">
+                    <div class="card-body cardBodyColor ">
                         <h5 class="card-title text-center">${book.title}</h5>
 
                         <p class="card-text text-center"> <span> Author name: </span> ${book.author_name ? book.author_name : 'Not available'}</p>
