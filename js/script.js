@@ -7,3 +7,15 @@ const getInputValue = () => {
     // console.log(searchValue)
 }
 
+// load data from api 
+
+const loadBookData = () => {
+    const searchResult = getInputValue();
+    const url = `https://openlibrary.org/search.json?q=${searchResult}`
+    fetch(url)
+        .then(res => res.json())
+        .then(data => console.log(data.docs))
+
+}
+
+
