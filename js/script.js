@@ -1,16 +1,19 @@
+const bookContainer = document.getElementById('books-container')
+
 // get search value from input field 
 
 const getInputValue = () => {
     const searchField = document.getElementById('search-field')
     const searchValue = searchField.value;
+    searchField.value = '';
     return searchValue;
-    // console.log(searchValue)
 }
 
 // load data from api 
 
 const loadBookData = () => {
     const searchResult = getInputValue();
+    bookContainer.innerHTML = '';
     const url = `https://openlibrary.org/search.json?q=${searchResult}`
     fetch(url)
         .then(res => res.json())
@@ -18,11 +21,12 @@ const loadBookData = () => {
 
 }
 
+// display data to website 
 const displayBookData = (books) => {
     console.log(books)
     books.forEach(book => {
         console.log(book)
-        const bookContainer = document.getElementById('books-container')
+        // const bookContainer = document.getElementById('books-container')
         const div = document.createElement('div')
         div.classList.add('col')
         div.innerHTML =
