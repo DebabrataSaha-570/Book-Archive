@@ -19,12 +19,13 @@ const getInputValue = () => {
 const loadBookData = () => {
     const searchResult = getInputValue();
 
+    // spinner 
     bookContainer.innerHTML = `
-    <div class="d-flex justify-content-center">
-    <div class="spinner-border" role="status">
+
+    <div class="spinner-border text-primary" role="status">
     <span class="visually-hidden">Loading...</span>
-    </div>
-    </div>
+  </div>
+
     `
     searchResultContainer.innerHTML = '';
     noResultContainer.innerHTML = '';
@@ -48,17 +49,25 @@ const displayBookData = (books) => {
 
     if (books.length === 0) {
         noResultContainer.innerHTML = `
-        <p> No result found </p>
+        <p class="text-center text-danger"> No result found </p>
         `
+        searchResultContainer.innerHTML = '';
     }
 
+    else if (books.length > 0) {
 
-    searchResultContainer.innerHTML = `
-    <p> showing first ${books.length / 2} items of ${books.length} </p>
+        searchResultContainer.innerHTML = `
+    <p class="text-center text-success"> showing first ${books.length / 2} items of ${books.length} </p>
     `
+    }
+    // searchResultContainer.innerHTML = `
+    // <p> showing first ${books.length / 2} items of ${books.length} </p>
+    // `
 
     console.log(books.length, books)
     bookContainer.textContent = '';
+
+
     books.slice(0, `${books.length / 2}`).forEach(book => {
         const div = document.createElement('div')
         div.classList.add('col')
@@ -69,8 +78,8 @@ const displayBookData = (books) => {
                     <div class="card-body">
                         <h5 class="card-title text-center">${book.title}</h5>
 
-                        <p class="card-text"> <span> Author name: </span> ${book.author_name ? book.author_name : 'Not available'}</p>
-                        <p class="card-text"> <span> First Publish year: </span> ${book.first_publish_year ? book.first_publish_year : 'Not available'}</p>
+                        <p class="card-text text-center"> <span> Author name: </span> ${book.author_name ? book.author_name : 'Not available'}</p>
+                        <p class="card-text text-center"> <span> First Publish year: </span> ${book.first_publish_year ? book.first_publish_year : 'Not available'}</p>
                     </div>
                 </div>
         `
