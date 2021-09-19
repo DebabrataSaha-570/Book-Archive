@@ -1,3 +1,10 @@
+body{
+   background: linear-gradient(to right, #1a2f3f, #7094ce);
+   /* background-image: linear-gradient(to right,  rgb(91, 111, 128),  #195190FF); */
+   /* background-image: linear-gradient(to right,  #00539CFF,  #EEA47FFF); */
+   /* background-image: linear-gradient(to right,  #4ca1af,  #c4e0e5); */
+   /* background-image: linear-gradient(to right,  #000428, #004e92); */
+}
 .card-image{
    height: 400px;
    background-color: lightgray;
@@ -9,11 +16,4 @@
    /* background-color: #A2A2A1FF; */
    /* background-color: #9CC3D5FF; */
    /* background-color: #4ca1af; */
-}
-body{
-   background: linear-gradient(to right, #1a2f3f, #7094ce);
-   /* background-image: linear-gradient(to right,  rgb(91, 111, 128),  #195190FF); */
-   /* background-image: linear-gradient(to right,  #00539CFF,  #EEA47FFF); */
-   /* background-image: linear-gradient(to right,  #4ca1af,  #c4e0e5); */
-   /* background-image: linear-gradient(to right,  #000428, #004e92); */
 }

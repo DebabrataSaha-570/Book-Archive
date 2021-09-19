@@ -27,8 +27,10 @@ const loadBookData = () => {
   </div>
 
     `
-    searchResultContainer.innerHTML = '';
-    noResultContainer.innerHTML = '';
+
+    searchResultContainer.textContent = '';
+
+    noResultContainer.textContent = '';
 
     if (searchResult.length > 0) {
         const url = `https://openlibrary.org/search.json?q=${searchResult}`
@@ -38,9 +40,12 @@ const loadBookData = () => {
             .catch(err => console.log(err))
     }
     else {
+
+        // swal js alert 
+
         swal('please write something to display!!!')
 
-        bookContainer.innerHTML = '';
+        bookContainer.textContent = '';
     }
 
 }
@@ -53,7 +58,7 @@ const displayBookData = (books) => {
         noResultContainer.innerHTML = `
         <p class="text-center text-danger"> No result found </p>
         `
-        searchResultContainer.innerHTML = '';
+        searchResultContainer.textContent = '';
     }
 
     // search result summary 
@@ -64,10 +69,10 @@ const displayBookData = (books) => {
     `
     }
 
-    console.log(books.length, books)
+    // console.log(books.length, books)
     bookContainer.textContent = '';
 
-
+    // showing all the books 
     books.slice(0, `${books.length / 2}`).forEach(book => {
         const div = document.createElement('div')
         div.classList.add('col')
