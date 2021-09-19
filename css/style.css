@@ -17,3 +17,12 @@ body{
    /* background-color: #9CC3D5FF; */
    /* background-color: #4ca1af; */
 }
+
+
+/*---------------
+    Media Queries  
+ ------------------*/
+
+ @media only screen and (max-width: 688px){
+    
+ }
