@@ -37,7 +37,23 @@ const loadBookData = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => displayBookData(data.docs))
-            .catch(err => console.log(err))
+            .catch(err => {
+                console.log(err)
+
+                // API error messages 
+                swal({
+                    title: "404, error!! Something went wrong. Try again later",
+
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+
+                // cleaning the spinner 
+
+                bookContainer.textContent = '';
+            })
+
     }
     else {
 
