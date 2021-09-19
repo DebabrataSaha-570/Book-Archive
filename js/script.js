@@ -38,7 +38,8 @@ const loadBookData = () => {
             .catch(err => console.log(err))
     }
     else {
-        alert('please write something to display')
+        swal('please write something to display!!!')
+
         bookContainer.innerHTML = '';
     }
 
